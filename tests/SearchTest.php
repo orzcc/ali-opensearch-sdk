@@ -1,6 +1,6 @@
 <?php
 
-use Lingxi\AliOpenSearch\OpenSearchClient;
+use Orzcc\AliOpenSearch\OpenSearchClient;
 
 class SearchTest extends PHPUnit_Framework_TestCase
 {

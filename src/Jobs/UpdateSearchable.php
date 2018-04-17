@@ -1,6 +1,6 @@
 <?php
 
-namespace Lingxi\AliOpenSearch\Jobs;
+namespace Orzcc\AliOpenSearch\Jobs;
 
 use Illuminate\Bus\Queueable;
 use Illuminate\Queue\SerializesModels;

@@ -1,10 +1,10 @@
 <?php
 
-namespace Lingxi\AliOpenSearch\Console;
+namespace Orzcc\AliOpenSearch\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Contracts\Events\Dispatcher;
-use Lingxi\AliOpenSearch\Events\ModelsDeleted;
+use Orzcc\AliOpenSearch\Events\ModelsDeleted;
 
 class FlushCommand extends Command
 {

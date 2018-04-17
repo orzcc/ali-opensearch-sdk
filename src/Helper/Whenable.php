@@ -1,6 +1,6 @@
 <?php
 
-namespace Lingxi\AliOpenSearch\Helper;
+namespace Orzcc\AliOpenSearch\Helper;
 
 trait Whenable
 {

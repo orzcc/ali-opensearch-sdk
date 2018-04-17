@@ -1,12 +1,12 @@
 <?php
 
-namespace Lingxi\AliOpenSearch;
+namespace Orzcc\AliOpenSearch;
 
 use Laravel\Scout\EngineManager;
 use Laravel\Scout\ModelObserver;
-use Lingxi\AliOpenSearch\Jobs\MakeSearchable;
-use Lingxi\AliOpenSearch\Jobs\RemoveSearchable;
-use Lingxi\AliOpenSearch\Jobs\UpdateSearchable;
+use Orzcc\AliOpenSearch\Jobs\MakeSearchable;
+use Orzcc\AliOpenSearch\Jobs\RemoveSearchable;
+use Orzcc\AliOpenSearch\Jobs\UpdateSearchable;
 use Laravel\Scout\Searchable as ScoutSearchable;
 use Illuminate\Support\Collection as BaseCollection;
 
@@ -147,7 +147,7 @@ trait Searchable
      *
      * @param  string  $query
      * @param  Closure  $callback
-     * @return Lingxi\AliOpenSearch\ExtendBuilder
+     * @return Orzcc\AliOpenSearch\ExtendBuilder
      */
     public static function search($query, $callback = null)
     {

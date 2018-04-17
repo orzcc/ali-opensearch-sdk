@@ -1,12 +1,12 @@
 <?php
 
-namespace Lingxi\AliOpenSearch\Query;
+namespace Orzcc\AliOpenSearch\Query;
 
 use Closure;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Str;
 use InvalidArgumentException;
-use Lingxi\AliOpenSearch\Helper\Whenable;
+use Orzcc\AliOpenSearch\Helper\Whenable;
 
 class QueryStructureBuilder
 {

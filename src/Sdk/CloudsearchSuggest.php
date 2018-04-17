@@ -18,7 +18,7 @@
  * under the License.
  */
 
-namespace Lingxi\AliOpenSearch\Sdk;
+namespace Orzcc\AliOpenSearch\Sdk;
 
 /**
  * opensearch 下拉提示搜索接口。

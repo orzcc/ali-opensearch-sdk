@@ -1,11 +1,11 @@
 <?php
 
-namespace Lingxi\AliOpenSearch;
+namespace Orzcc\AliOpenSearch;
 
 use Illuminate\Support\Facades\Config;
 use Laravel\Scout\Events\ModelsImported;
-use Lingxi\AliOpenSearch\Events\ModelsDeleted;
-use Lingxi\AliOpenSearch\Events\ModelsUpdated;
+use Orzcc\AliOpenSearch\Events\ModelsDeleted;
+use Orzcc\AliOpenSearch\Events\ModelsUpdated;
 use Laravel\Scout\SearchableScope as ScoutSearchableScope;
 use Illuminate\Database\Eloquent\Builder as EloquentBuilder;
 

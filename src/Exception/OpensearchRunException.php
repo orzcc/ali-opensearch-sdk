@@ -1,6 +1,6 @@
 <?php
 
-namespace Lingxi\AliOpenSearch\Exception;
+namespace Orzcc\AliOpenSearch\Exception;
 
 class OpensearchRunException extends OpensearchException
 {

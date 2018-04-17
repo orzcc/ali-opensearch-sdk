@@ -1,6 +1,6 @@
 <?php
 
-namespace Lingxi\AliOpenSearch;
+namespace Orzcc\AliOpenSearch;
 
 use Illuminate\Database\Eloquent\Collection;
 

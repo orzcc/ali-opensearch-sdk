@@ -1,10 +1,10 @@
 <?php
 
-namespace Lingxi\AliOpenSearch;
+namespace Orzcc\AliOpenSearch;
 
-use Lingxi\AliOpenSearch\Sdk\CloudsearchDoc;
-use Lingxi\AliOpenSearch\Sdk\CloudsearchSearch;
-use Lingxi\AliOpenSearch\Sdk\CloudsearchClient;
+use Orzcc\AliOpenSearch\Sdk\CloudsearchDoc;
+use Orzcc\AliOpenSearch\Sdk\CloudsearchSearch;
+use Orzcc\AliOpenSearch\Sdk\CloudsearchClient;
 
 /**
  * aliyun opensearch sdk 封装

@@ -1,9 +1,9 @@
 <?php
 
-namespace Lingxi\AliOpenSearch\Query;
+namespace Orzcc\AliOpenSearch\Query;
 
 use Illuminate\Support\Facades\Config;
-use Lingxi\AliOpenSearch\Sdk\CloudsearchSearch;
+use Orzcc\AliOpenSearch\Sdk\CloudsearchSearch;
 
 /**
  * laravel eloquent builder scheme to opensearch scheme

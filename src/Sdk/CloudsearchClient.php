@@ -18,11 +18,11 @@
  * under the License.
  */
 
-namespace Lingxi\AliOpenSearch\Sdk;
+namespace Orzcc\AliOpenSearch\Sdk;
 
 use Exception;
-use Lingxi\AliOpenSearch\Exception\OpensearchRunException;
-use Lingxi\AliOpenSearch\Exception\OpensearchCallException;
+use Orzcc\AliOpenSearch\Exception\OpensearchRunException;
+use Orzcc\AliOpenSearch\Exception\OpensearchCallException;
 
 /**
  * Cloudsearch service。

@@ -1,8 +1,8 @@
 {
-    "name": "lingxi/ali-opensearch-sdk",
+    "name": "orzcc/ali-opensearch-sdk",
     "autoload": {
         "psr-4": {
-            "Lingxi\\AliOpenSearch\\": "src/"
+            "Orzcc\\AliOpenSearch\\": "src/"
         }
     },
     "require": {

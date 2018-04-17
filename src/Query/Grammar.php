@@ -1,6 +1,6 @@
 <?php
 
-namespace Lingxi\AliOpenSearch\Query;
+namespace Orzcc\AliOpenSearch\Query;
 
 /**
  * @todo 对于整个 opensearch 的查询语法来说，本身应该存在这么一套完整的语法构建，目前仅仅只处理了 query 部分

@@ -1,9 +1,9 @@
 <?php
 
-namespace Lingxi\AliOpenSearch;
+namespace Orzcc\AliOpenSearch;
 
 use Illuminate\Pagination\Paginator;
-use Lingxi\AliOpenSearch\Helper\Whenable;
+use Orzcc\AliOpenSearch\Helper\Whenable;
 use Laravel\Scout\Builder as ScoutBuilder;
 use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Pagination\LengthAwarePaginator;

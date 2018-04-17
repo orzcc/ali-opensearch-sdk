@@ -1,10 +1,10 @@
 <?php
 
-namespace Lingxi\AliOpenSearch;
+namespace Orzcc\AliOpenSearch;
 
 use Laravel\Scout\EngineManager;
 use Illuminate\Support\ServiceProvider;
-use Lingxi\AliOpenSearch\Console\FlushCommand;
+use Orzcc\AliOpenSearch\Console\FlushCommand;
 
 class OpenSearchServiceProvider extends ServiceProvider
 {

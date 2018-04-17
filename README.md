@@ -1,5 +1,7 @@
 # ali-opensearch-sdk
 
+Fork From Lingxi: https://github.com/lingxi/ali-opensearch-sdk
+
 应用层，基于 laravel scout 实现：https://laravel.com/docs/5.4/scout#custom-engines
 
 scout 默认引擎是 algolia：https://www.algolia.com
@@ -17,7 +19,7 @@ scout 默认引擎是 algolia：https://www.algolia.com
 ## 安装
 
 ```shell
-composer require lingxi/ali-opensearch-sdk
+composer require orzcc/ali-opensearch-sdk
 ```
 
 ## 配置
@@ -39,7 +41,7 @@ return [
         'access_key_id'     => env('OPENSEARCH_ACCESS_KEY'),
 
         'access_key_secret' => env('OPENSEARCH_ACCESS_SECRET'),
-        
+
         'host'              => env('OPENSEARCH_HOST'),
 
         'debug'             => env('OPENSEARCH_DEBUG'),
@@ -62,7 +64,7 @@ return [
 
 ```php
 Laravel\Scout\ScoutServiceProvider::class,
-Lingxi\AliOpenSearch\OpenSearchServiceProvider::class,
+Orzcc\AliOpenSearch\OpenSearchServiceProvider::class,
 ```
 
 ---
@@ -78,7 +80,7 @@ Lingxi\AliOpenSearch\OpenSearchServiceProvider::class,
 
 namespace App\Models;
 
-use Lingxi\AliOpenSearch\Searchable;
+use Orzcc\AliOpenSearch\Searchable;
 
 class User extends Model
 {
@@ -113,7 +115,7 @@ class User extends Model
 ```php
 <?php
 
-$result = User::search(['name' => 'lingxi'])
+$result = User::search(['name' => 'orzcc'])
     ->select([
         'id',
         'name',
@@ -132,7 +134,7 @@ $result = User::search(['name' => 'lingxi'])
 ```php
 <?php
 
-use Lingxi\AliOpenSearch\Query\QueryStructureBuilder as Query;
+use Orzcc\AliOpenSearch\Query\QueryStructureBuilder as Query;
 
 $q = $_GET['query'];
 
@@ -160,4 +162,3 @@ $users = User::search($query)
 这个时候实现 toSearchableDocCallbacks 这个方法，向 opensearch 提供删除，修改的数据。
 
 使用可以先阅读源码，有详细的注释，这边还没有想出最佳实践。
-

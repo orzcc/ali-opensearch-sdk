@@ -1,15 +1,15 @@
 <?php
 
-namespace Lingxi\AliOpenSearch;
+namespace Orzcc\AliOpenSearch;
 
 use Laravel\Scout\Engines\Engine;
 use Illuminate\Support\Facades\Event;
-use Lingxi\AliOpenSearch\Query\Builder;
+use Orzcc\AliOpenSearch\Query\Builder;
 use Laravel\Scout\Builder as ScoutBuilder;
 use Illuminate\Database\Eloquent\Collection;
-use Lingxi\AliOpenSearch\Events\DocSyncEvent;
-use Lingxi\AliOpenSearch\Sdk\CloudsearchSearch;
-use Lingxi\AliOpenSearch\Exception\OpensearchException;
+use Orzcc\AliOpenSearch\Events\DocSyncEvent;
+use Orzcc\AliOpenSearch\Sdk\CloudsearchSearch;
+use Orzcc\AliOpenSearch\Exception\OpensearchException;
 
 class OpenSearchEngine extends Engine
 {
@@ -23,7 +23,7 @@ class OpenSearchEngine extends Engine
     /**
      * The OpenSearch client.
      *
-     * @var \Lingxi\AliOpenSearch\Sdk\CloudsearchSearch
+     * @var \Orzcc\AliOpenSearch\Sdk\CloudsearchSearch
      */
     protected $cloudsearchSearch;
 
@@ -37,7 +37,7 @@ class OpenSearchEngine extends Engine
     /**
      * Create a new engine instance.
      *
-     * @param  \Lingxi\AliOpenSearch\OpenSearchClient $opensearch
+     * @param  \Orzcc\AliOpenSearch\OpenSearchClient $opensearch
      * @return void
      */
     public function __construct(OpenSearchClient $opensearch)
@@ -320,7 +320,7 @@ class OpenSearchEngine extends Engine
     /**
      * Get the results of the given query mapped onto models.
      *
-     * @param  \Lingxi\AliOpenSearch\ScoutBuilder  $builder
+     * @param  \Orzcc\AliOpenSearch\ScoutBuilder  $builder
      * @return \Illuminate\Database\Eloquent\Collection
      */
     public function get(ScoutBuilder $builder)
