@@ -20,11 +20,15 @@ trait Searchable
 
     public static function bootSearchable()
     {
-        static::addGlobalScope(new SearchableScope);
+        // 开启全局开关，才可以进行Model观察及更新
+        if (config('scout.searchable_enabled')) {
 
-        static::observe(new ModelObserver);
+            static::addGlobalScope(new SearchableScope);
 
-        (new static)->registerSearchableMacros();
+            static::observe(new ModelObserver);
+
+            (new static)->registerSearchableMacros();
+        }
     }
 
     public function registerSearchableMacros()

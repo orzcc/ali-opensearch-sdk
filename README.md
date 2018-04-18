@@ -1,20 +1,17 @@
 # ali-opensearch-sdk
 
-Fork From Lingxi: https://github.com/lingxi/ali-opensearch-sdk
+此包代码 Fork 来自 Lingxi: https://github.com/lingxi/ali-opensearch-sdk
 
-应用层，基于 laravel scout 实现：https://laravel.com/docs/5.4/scout#custom-engines
+建议常规应用使用 Lingxi 的原始包，本包进行了一部分自定义修改，未做过多通用场景的考虑。
 
-scout 默认引擎是 algolia：https://www.algolia.com
+原始包中需要在 Model 中添加 toSearchableDocCallbacks 方法以禁用关联更新，此包在配置文件中添加了一个开关，可全局禁用Model观察，采用OpenSearch自动与RDS同步的方案。
 
-开源的，大家常用 Elasticsearch：https://laracasts.com/discuss/channels/general-discussion/looking-for-a-search-engine-for-my-laravel-app?page=1
 
-阿里云有开放搜索服务：https://help.aliyun.com/document_detail/29104.html?spm=5176.doc35261.6.539.qrzcjR
+# 介绍
 
-看文档相比自己搭 Elasticsearch 有以下优势：
+应用层，基于 laravel scout 实现：https://laravel.com/docs/5.6/scout#custom-engines
 
-- 不用买服务器、搭环境、主从、容灾、维护...这是最重要的原因（实际上看似开放搜索要收费，当时算上人工和服务器成本，自己搭建基础服务贵太多了）
-- 开放搜索可以从 RDS 自动同步数据，这样就不用在应用里做数据同步了（实际上，对灵析来说，因为既有 laravel 又有 tp，要做好数据同步非常麻烦）
-- 据称，开放搜索比 ElasticSearch 开源系统的QPS高4倍，查询延迟低4倍
+阿里云有开放搜索服务：https://help.aliyun.com/document_detail/29104.html
 
 ## 安装
 
@@ -47,6 +44,8 @@ return [
         'debug'             => env('OPENSEARCH_DEBUG'),
 
     ],
+
+    'searchable_enabled'=> false, // 关联更新到 Open Search（ false 代表全局禁用）
 
     'count' => [
 
@@ -93,17 +92,15 @@ class User extends Model
      */
     public function searchableAs()
     {
-        return 'user';
-    }
-
-    public function toSearchableDocCallbacks($actions = ['update', 'delete'])
-    {
-        throw new Exception('这个应用不需要手动维护数据');
+        return 'user_index';
     }
 
     public function getSearchableFields()
     {
-        return 'id';
+        return [
+            'id',
+            'name'
+        ];
     }
 }
 ```
@@ -154,11 +151,3 @@ $users = User::search($query)
     ->take(5)
     ->get();
 ```
-
-### 数据的维护
-
-有很多情况可能无法直接使用 opensearch 直接同步 RDS 的数据，那么就需要在应用用去手动维护。
-
-这个时候实现 toSearchableDocCallbacks 这个方法，向 opensearch 提供删除，修改的数据。
-
-使用可以先阅读源码，有详细的注释，这边还没有想出最佳实践。

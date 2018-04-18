@@ -55,6 +55,9 @@ class OpenSearchEngine extends Engine
      */
     public function add($models)
     {
+        // 源头禁用关联更新到 Open Search
+        return;
+
         // Get opensearch index client.
         $doc = $this->getCloudSearchDoc($models);
 
@@ -81,6 +84,9 @@ class OpenSearchEngine extends Engine
      */
     public function update($models)
     {
+        // 源头禁用关联更新到 Open Search
+        return;
+        
         // Get opensearch index client.
         $doc = $this->getCloudSearchDoc($models);
 
@@ -109,6 +115,9 @@ class OpenSearchEngine extends Engine
      */
     public function delete($models)
     {
+        // 源头禁用关联更新到 Open Search
+        return;
+
         $doc = $this->getCloudSearchDoc($models);
 
         /*
