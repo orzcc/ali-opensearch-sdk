@@ -27,9 +27,14 @@ class Builder
         $this->addFields($builder->fields);
         $this->addDistinct($builder->distincts);
         $this->addAggregate($builder->aggregates);
-        $this->setPair($builder->pair);
+        $this->addRerankSize($builder->rerankSize);
+        $this->setPair($builder->kvpair);
         $this->addQPName($builder->QPName);
         $this->setFormulaName($builder->formulaName);
+        $this->setFirstFormulaName($builder->firstFormulaName);
+        $this->addCustomParam($builder->customParams);
+        $this->setScrollId($builder->scrollId);
+        $this->setScroll($builder->scroll);
 
         $this->cloudsearchSearch->setFormat('json');
 
@@ -151,10 +156,17 @@ class Builder
         }
     }
 
-    protected function setPair($pair)
+    protected function addRerankSize($rerankSize)
     {
-        if ($pair) {
-            $this->cloudsearchSearch->setPair($pair);
+        if ($rerankSize) {
+            $this->cloudsearchSearch->addRerankSize($rerankSize);
+        }
+    }
+
+    protected function setPair($kvpair)
+    {
+        if ($kvpair) {
+            $this->cloudsearchSearch->setPair($kvpair);
         }
     }
 
@@ -165,10 +177,45 @@ class Builder
         }
     }
 
+    protected function clearFormulaName()
+    {
+        $this->cloudsearchSearch->clearFormulaName();
+    }
+
     protected function setFormulaName($formulaName)
     {
         if ($formulaName) {
             $this->cloudsearchSearch->setFormulaName($formulaName);
+        }
+    }
+
+    protected function setFirstFormulaName($formulaName)
+    {
+        if ($formulaName) {
+            $this->cloudsearchSearch->setFirstFormulaName($formulaName);
+        }
+    }
+
+    protected function addCustomParam($customParams)
+    {
+        if ($customParams) {
+            foreach ($customParams as $key => $value) {
+                $this->cloudsearchSearch->addCustomParam($key, $value);
+            }
+        }
+    }
+
+    protected function setScrollId($scrollId)
+    {
+        if ($scrollId) {
+            $this->cloudsearchSearch->setScrollId($scrollId);
+        }
+    }
+
+    protected function setScroll($scroll)
+    {
+        if ($scroll) {
+            $this->cloudsearchSearch->setScroll($scroll);
         }
     }
 }
