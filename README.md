@@ -4,7 +4,8 @@
 
 建议常规应用使用 Lingxi 的原始包，本包进行了一部分自定义修改，未做过多通用场景的考虑。
 
-原始包中需要在 Model 中添加 toSearchableDocCallbacks 方法以禁用关联更新，此包在配置文件中添加了一个开关，可全局禁用Model观察，采用OpenSearch自动与RDS同步的方案。
+原始包中需要在 Model 中添加 toSearchableDocCallbacks 方法(无论启用还是弃用关联更新)。
+此包在配置文件中添加了一个开关，可全局禁用Model观察，采用OpenSearch自动与RDS同步的方案。
 
 
 ## searchable_enabled
