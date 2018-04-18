@@ -28,6 +28,7 @@ class Builder
         $this->addDistinct($builder->distincts);
         $this->addAggregate($builder->aggregates);
         $this->setPair($builder->pair);
+        $this->addQPName($builder->QPName);
 
         $this->cloudsearchSearch->setFormat('json');
 
@@ -153,6 +154,13 @@ class Builder
     {
         if ($pair) {
             $this->cloudsearchSearch->setPair($pair);
+        }
+    }
+
+    protected function addQPName($QPName)
+    {
+        if ($QPName) {
+            $this->cloudsearchSearch->addQPName($QPName);
         }
     }
 }

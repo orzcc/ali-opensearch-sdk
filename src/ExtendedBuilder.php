@@ -111,6 +111,13 @@ class ExtendedBuilder extends ScoutBuilder
     public $pair;
 
     /**
+     * QPName
+     *
+     * @var string
+     */
+    public $QPName;
+
+    /**
      * Create a new search builder instance.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
@@ -281,6 +288,17 @@ class ExtendedBuilder extends ScoutBuilder
     public function setPair($pair)
     {
         $this->pair = $pair;
+
+        return $this;
+    }
+
+    public function addQPName($QPName)
+    {
+        if (is_array($QPName)) {
+            $this->QPName = $QPName;
+        } else {
+            $this->QPName[] = $QPName;
+        }
 
         return $this;
     }
