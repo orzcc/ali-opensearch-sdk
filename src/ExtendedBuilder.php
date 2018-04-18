@@ -118,6 +118,13 @@ class ExtendedBuilder extends ScoutBuilder
     public $QPName;
 
     /**
+     * formulaName
+     *
+     * @var string
+     */
+    public $formulaName;
+
+    /**
      * Create a new search builder instance.
      *
      * @param  \Illuminate\Database\Eloquent\Model  $model
@@ -299,6 +306,13 @@ class ExtendedBuilder extends ScoutBuilder
         } else {
             $this->QPName[] = $QPName;
         }
+
+        return $this;
+    }
+
+    public function setFormulaName($formulaName)
+    {
+        $this->formulaName = $formulaName;
 
         return $this;
     }

@@ -29,6 +29,7 @@ class Builder
         $this->addAggregate($builder->aggregates);
         $this->setPair($builder->pair);
         $this->addQPName($builder->QPName);
+        $this->setFormulaName($builder->formulaName);
 
         $this->cloudsearchSearch->setFormat('json');
 
@@ -161,6 +162,13 @@ class Builder
     {
         if ($QPName) {
             $this->cloudsearchSearch->addQPName($QPName);
+        }
+    }
+
+    protected function setFormulaName($formulaName)
+    {
+        if ($formulaName) {
+            $this->cloudsearchSearch->setFormulaName($formulaName);
         }
     }
 }
