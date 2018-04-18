@@ -309,6 +309,17 @@ class OpenSearchEngine extends Engine
     }
 
     /**
+     * Get the view total count from a raw result returned by the engine.
+     *
+     * @param  mixed  $results
+     * @return int
+     */
+    public function getViewTotal($results)
+    {
+        return $results['result']['viewtotal'];
+    }
+
+    /**
      * @param $models
      * @return Sdk\CloudsearchDoc
      */

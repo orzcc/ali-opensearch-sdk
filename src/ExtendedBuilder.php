@@ -350,6 +350,7 @@ class ExtendedBuilder extends ScoutBuilder
         $paginator = (new LengthAwarePaginator($results, $engine->getTotalCount($rawResults), $perPage, $page, [
             'path' => Paginator::resolveCurrentPath(),
             'pageName' => $pageName,
+            'viewtotal' => $engine->getViewTotal($rawResults),
         ]));
 
         return $paginator->appends('query', $this->query);
