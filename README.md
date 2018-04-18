@@ -7,6 +7,17 @@
 原始包中需要在 Model 中添加 toSearchableDocCallbacks 方法以禁用关联更新，此包在配置文件中添加了一个开关，可全局禁用Model观察，采用OpenSearch自动与RDS同步的方案。
 
 
+## searchable_enabled
+
+如果 searchable_enabled 开启，一定要在启用 Open Search 的 Model 中添加 toSearchableDocCallbacks 方法
+
+```php
+public function toSearchableDocCallbacks($actions = ['update', 'delete'])
+{
+    return $actions;
+}
+```
+
 # 介绍
 
 应用层，基于 laravel scout 实现：https://laravel.com/docs/5.6/scout#custom-engines
