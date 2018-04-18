@@ -16,7 +16,7 @@ trait Searchable
 
     use SearchableMethods;
 
-    abstract public function toSearchableDocCallbacks($actions = ['update', 'delete']);
+    // abstract public function toSearchableDocCallbacks($actions = ['update', 'delete']);
 
     public static function bootSearchable()
     {
