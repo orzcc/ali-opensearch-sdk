@@ -274,7 +274,7 @@ class OpenSearchEngine extends Engine
             return collect(array_map(function ($item) use ($fields) {
                 $result = [];
                 foreach ($fields as $field) {
-                    $result[$field] = $item[$field];
+                    $result[$field] = isset($item[$field]) ? $item[$field] : '';
                 }
                 return $result;
             }, $results['result']['items']));
